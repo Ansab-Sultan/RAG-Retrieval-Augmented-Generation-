@@ -56,7 +56,7 @@ def query_rag(query_text: str, session_id: str):
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, chat_history=chat_history, question=query_text)
     
-    llm = ChatGroq(temperature=0, model_name="llama3-8b-8192", api_key="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")
+    llm = ChatGroq(temperature=0, model_name="llama3-8b-8192", api_key="Your API key here")
     response = llm.invoke(prompt)
     sources = [doc.metadata.get("id", None) for doc, _score in results]
     
